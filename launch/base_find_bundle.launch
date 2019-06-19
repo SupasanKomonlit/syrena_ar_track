@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- This part about file node of track detection -->
+    <arg name="node_file" default="findMarkerBundles"/>
+
+    <!-- This part about parameter of ar_track -->
+    <arg name="marker_size" default="4.4"/>
+    <arg name="max_new_marker_error" default="0.08"/>
+    <arg name="max_track_error" default="0.2"/>
+    <arg name="bundle_files" default="$(find syrena_ar_track)/bundles/cage_06_07.xml"/>
+
+    <!-- This part about parameter of ar track but have to connect with other -->
+    <arg name="topic_camera_image" default="/rayfin/image_raw"/>
+    <arg name="topic_camera_info" default="/rayfin/camera_info"/>
+    <arg name="output_frame" default="rayfin_optical_frame"/>
+
+    <!-- This part about parameter of rviz and frame so output_frame is one in this part-->
+    <arg name="master_marker_id" default="8"/>
+    <arg name="model_name" default="base_cage"/>
+    <arg name="negate_half_pi" default="-1.5707963267948966"/>
+    <arg name="tf_linear_marker_to_cage" default="0 0 0.3"/>
+
+    <!-- This part about model draw simulation -->
+    <arg name="model_urdf" default="$(find syrena_ar_track)/urdf/real_cage.urdf"/>
+
+    <node name="ar_track_alvar" 
+        pkg="ar_track_alvar" 
+        type="$(arg node_file)"
+        args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg topic_camera_image) $(arg topic_camera_info) $(arg output_frame) $(arg bundle_files)"/>
+
+    <!-- TF Part -->
+    <node pkg="tf"
+        type="static_transform_publisher"
+        name="$(arg model_name)_to_ar_marker_$(arg master_marker_id)"
+        args="0 0 0 $(arg negate_half_pi) $(arg negate_half_pi) 0 ar_marker_$(arg master_marker_id) base_marker 10"/>
+
+    <node pkg="tf"
+        type="static_transform_publisher"
+        name="base_marker_to_$(arg model_name)"
+        args="$(arg tf_linear_marker_to_cage) 0 0 0 base_marker $(arg model_name) 10"/>
+
+    <!-- Draw Part -->
+    <param name="cage_description" command="$(find xacro)/xacro $(arg model_urdf)"/>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="$(arg draw_cage)">
+        <remap from="robot_description" to="cage_description"/>
+    </node>
+
+</launch>

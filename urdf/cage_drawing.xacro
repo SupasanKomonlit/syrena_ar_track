@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<robot name="syrena_cage" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:property name="PI" value="3.1415926535897931"/>
+
+    <xacro:property name="HALF_PI" value="${ PI / 2}"/>
+
+    <link name="cage">
+
+        <visual>
+
+            <origin xyz="0 0 0" rpy="${HALF_PI} 0 0"/>
+
+            <geometry>
+                <mesh filename="package://syrena_ar_track/stl/LARS_Cage v63.stl"
+                    scale="0.001 0.001 0.001"/>
+            </geometry>
+
+        </visual>
+
+    </link>
+
+</robot>

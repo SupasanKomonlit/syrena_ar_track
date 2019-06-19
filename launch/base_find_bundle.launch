@@ -25,7 +25,7 @@
     <!-- This part about model draw simulation -->
     <arg name="model_urdf" default="$(find syrena_ar_track)/urdf/real_cage.urdf"/>
 
-    <node name="ar_track_alvar" 
+    <node name="syrena_ar_track" 
         pkg="ar_track_alvar" 
         type="$(arg node_file)"
         args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg topic_camera_image) $(arg topic_camera_info) $(arg output_frame) $(arg bundle_files)"/>
@@ -44,7 +44,7 @@
     <!-- Draw Part -->
     <param name="cage_description" command="$(find xacro)/xacro $(arg model_urdf)"/>
 
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="$(arg draw_cage)">
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="draw_cage">
         <remap from="robot_description" to="cage_description"/>
     </node>
 

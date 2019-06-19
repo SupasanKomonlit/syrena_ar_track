@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+    <name>syrena_ar_track</name>
+
+    <version>1.0.0</version>
+
+    <description>Detect ar track</description>
+
+    <maintainer email="supasan.k@ku.th">K.Supasan</maintainer>
+
+    <license>MIT</license>
+
+    <author>K.Supasan</author>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <build_depend>ar_track_alvar_msgs</build_depend>
+    <exec_depend>ar_track_alvar_msgs</exec_depend>
+
+    <build_depend>sensor_msgs</build_depend>
+    <exec_depend>sensor_msgs</exec_depend>
+
+    <build_depend>rospy</build_depend>
+    <exec_depend>rospy</exec_depend>
+
+<package>

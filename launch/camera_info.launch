@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="camera_name" default="rayfin"/>
+    <arg name="yaml_file" default="$(find syrena_ar_track)/yaml/rayfin_full_screen.yaml"/>
+    <arg name="topic_camera_info" default="$(arg camera_name)/camera_info"/>
+
+    <node pkg="syrena_ar_track" type="publish_camera_info.py" name="publish_camera_info"
+            output="screen" respawn="true">
+        <param name="camera_name" type="string" value="$(arg camera_name)"/>
+        <param name="yaml" type="string" value="$(arg yaml_file)"/>
+        <param name="topic_camera_info" value="$(arg topic_camera_info)"/>
+    </node>
+
+</launch>

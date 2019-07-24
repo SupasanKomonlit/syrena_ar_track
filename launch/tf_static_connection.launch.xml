@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="negate_half_pi" default="-1.5707963267948966"/>
+    <arg name="half_pi" default="1.5707963267948966"/>
+    <arg name="pi" default="3.1415926535897932"/>
+    <arg name="negate_pi" default="3.1415926535897932"/>
+
+    <arg name="master_marker_name" default="filter_marker_0"/>
+
+    <arg name="tf_base_marker_to_cage" default="-1.3494 0 -0.362 0 0 0"/>
+    <arg name="model_urdf" default="$(find syrena_ar_track)/urdf/cage_drawing.xacro"/>
+    <arg name="model_name" default="cage"/>
+
+    <!-- TF Part -->
+    <!-- Below node is connect your master marker to base_marker-->
+    <node pkg="tf"
+        type="static_transform_publisher"
+        name="$(arg master_marker_name)_to_base_marker"
+        args="0 0 0 $(arg negate_half_pi) $(arg negate_half_pi) 0 $(arg master_marker_name) base_marker 10"/>
+
+    <node pkg="tf"
+        type="static_transform_publisher"
+        name="base_marker_to_$(arg model_name)"
+        args="$(arg tf_base_marker_to_cage) base_marker $(arg model_name) 10"/>
+
+    <!-- Draw Part -->
+    <param name="cage_description" command="$(find xacro)/xacro $(arg model_urdf)"/>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="draw_cage">
+        <remap from="robot_description" to="cage_description"/>
+    </node>
+</launch>

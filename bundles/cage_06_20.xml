@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<multimarker markers="5">
+
+    <!-- Ghost master marker -->
+
+    <marker index="0" status="1">
+        <corner x="-11.25" y="0" z="+11.25"/>
+        <corner x="11.25" y="0" z="+11.25"/>
+        <corner x="11.25" y="0" z="-11.25"/>
+        <corner x="-11.25" y="0" z="-11.25"/>
+    </marker>
+
+    <!-- Position of marker ID -->
+    <!-->
+                5 0
+
+
+
+                 0
+        
+                111
+
+            240     255
+    <-->    
+
+    <marker index="50" status="1">
+        <corner x="-11.25" y="-23.5" z="-135"/>
+        <corner x="+11.25" y="-23.5" z="-135"/>
+        <corner x="+11.25" y="-1" z="-135"/>
+        <corner x="-11.25" y="-1" z="-135"/>
+    </marker>
+
+    <marker index="111" status="1">
+        <corner x="-11.25" y="-5" z="61"/>
+        <corner x="+11.25" y="-5" z="61"/>
+        <corner x="+11.25" y="-5" z="38.5"/>
+        <corner x="-11.25" y="-5" z="38.5"/>
+    </marker>
+
+    <marker index="240" status="1">
+        <corner x="-60" y="-23.5" z="+135"/>
+        <corner x="-37.5" y="-23.5" z="+135"/>
+        <corner x="-37.5" y="-1" z="+135"/>
+        <corner x="-60" y="-1" z="+135"/>
+    </marker>
+
+    <marker index="255" status="1">
+        <corner x="37.5" y="-23.5" z="+135"/>
+        <corner x="60" y="-23.5" z="+135"/>
+        <corner x="60" y="-1" z="+135"/>
+        <corner x="37.5" y="-1" z="+135"/>
+    </marker>
+
+</multimarker>

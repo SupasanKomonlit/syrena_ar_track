@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<multimarker markers="3">
+
+    <!-- Ghost master marker -->
+
+    <marker index="0" status="1">
+        <corner x="-11.25" y="-11.25" z="0"/>
+        <corner x="11.25" y="-11.25" z="0"/>
+        <corner x="11.25" y="+11.25" z="0"/>
+        <corner x="-11.25" y="+11.25" z="0"/>
+    </marker>
+
+    <!-- Position of marker ID -->
+    <!-->
+                240
+
+        
+                111
+    <-->    
+
+    <marker index="111" status="1">
+        <corner x="-12.97" y="-64.77" z="0"/>
+        <corner x="+9.53" y="-64.77" z="0"/>
+        <corner x="+9.53" y="-42.27" z="0"/>
+        <corner x="-12.97" y="-42.27" z="0"/>
+    </marker>
+
+    <marker index="240" status="1">
+        <corner x="+12.07" y="-42.27" z="-269.24"/>
+        <corner x="-10.43" y="-42.27" z="-269.24"/>
+        <corner x="-10.43" y="-64.77" z="-269.24"/>
+        <corner x="+12.07" y="-64.77" z="-269.24"/>
+    </marker>
+
+</multimarker>

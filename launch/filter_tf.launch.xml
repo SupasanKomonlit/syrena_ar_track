@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+    
+<launch>
+
+    <!-- important par to set this arguments-->
+    <arg name="marker_id" default="0"/>
+
+    <!-- This part about parameter of average filter -->
+    <arg name="time_duration" default="2.0"/>
+    <arg name="old_parent_frame" default="odom"/>
+    <arg name="old_child_frame" default="ar_marker_$(arg marker_id)"/>
+    <arg name="new_child_frame" default="filter_marker_$(arg marker_id)"/>
+
+    <!-- This node is filter file -->
+    <node name="filter_marker_$(arg marker_id)" 
+            pkg="syrena_ar_track" 
+            type="filter_tf_specific.py"
+            output="screen"
+            respawn="true">
+        <param name="time_duration" type="double" value="$(arg time_duration)"/>
+        <param name="old_parent_frame" type="string" value="$(arg old_parent_frame)"/>
+        <param name="old_child_frame" type="string" value="$(arg old_child_frame)"/>
+        <param name="new_child_frame" type="string" value="$(arg new_child_frame)"/>
+    </node>
+
+
+</launch>

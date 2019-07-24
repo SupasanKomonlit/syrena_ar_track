@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 
+<!-- This find will setup follow about base_link you have once set time per camera-->
+
 <launch>
 
     <arg name="camera_name" default="rayfin"/>

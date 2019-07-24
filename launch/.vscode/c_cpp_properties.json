@@ -1,0 +1,58 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/auv/workspace/syrena_global_ws/devel/include",
+        "/opt/ros/kinetic/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/amcl/include",
+        "/home/auv/workspace/syrena_global_ws/src/ar_track_alvar/ar_track_alvar/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/base_local_planner/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/carrot_planner/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/clear_costmap_recovery/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/costmap_2d/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/dwa_local_planner/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/global_planner/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/map_server/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/move_base/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/move_slow_and_clear/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/nav_core/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/navfn/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/robot_localization/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/robot_pose_ekf/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/rotate_recovery/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_async_lib/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_behavior_manager/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_cp_probe_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_cpp_utils/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_custom_layers/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_dvl_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_global_planner/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_gps_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_gridmap/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_imagenex_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_imaging_sonar_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ins_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_iridium_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_kraken_battery_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_modbus_lib/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_obstacle_avoidance/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_omni_local_planner/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_pdu_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_pipeline_detector/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_pressure_sensor_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_rayfin_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_svp_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_thruster_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_usbl_driver/include",
+        "/home/auv/workspace/syrena_global_ws/src/ueye_cam/include",
+        "/home/auv/workspace/syrena_global_ws/src/syrena_ros_navigation/navigation/voxel_grid/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="master_marker_id" default="0"/>
+
+    <include file="$(find syrena_ar_track)/launch/find_bundle.launch.xml">
+        <arg name="marker_size" value="25"/>
+        <arg name="max_new_marker_error" value="0.08"/>
+        <arg name="max_track_error" value="0.2"/>
+        <arg name="bundle_files" value="$(find syrena_ar_track)/bundles/cage_06_07.xml"/>
+    </include>
+
+    <include file="$(find syrena_ar_track)/launch/tf_static_connection.launch.xml">
+        <arg name="master_marker_name" value="ar_marker_$(arg master_marker_id)"/>
+    </include>
+
+    <include file="$(find syrena_ar_track)/launch/camera_info.launch.xml">
+    </include>
+
+</launch>

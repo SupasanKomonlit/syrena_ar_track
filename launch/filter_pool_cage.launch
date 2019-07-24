@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="master_marker_id" default="0"/>
+
+    <include file="$(find syrena_ar_track)/launch/find_bundle.launch.xml">
+        <arg name="marker_size" value="25"/>
+        <arg name="max_new_marker_error" value="0.08"/>
+        <arg name="max_track_error" value="0.2"/>
+        <arg name="bundle_files" value="$(find syrena_ar_track)/bundles/cage_06_07.xml"/>
+    </include>
+
+    <include file="$(find syrena_ar_track)/launch/tf_static_connection.launch.xml">
+        <arg name="master_marker_name" value="filter_marker_$(arg master_marker_id)"/>
+    </include>
+
+    <include file="$(find syrena_ar_track)/launch/camera_info.launch.xml">
+    </include>
+
+    <include file="$(find syrena_ar_track)/launch/filter_tf.launch.xml">
+        <arg name="time_duration" value="2.0"/>
+        <arg name="old_parent_frame" value="odom"/>
+        <arg name="old_child_frame" value="ar_marker_$(arg master_marker_id)"/>
+        <arg name="new_child_frame" value="filter_marker_$(arg master_marker_id)"/>
+    </include>
+
+    <node name="$(anon rviz_cage_vis)" pkg="rviz" type="rviz" args="-d $(find syrena_ar_track)/rviz/look_cage.rviz"/>
+    <node name="$(anon rviz_cage_vis2)" pkg="rviz" type="rviz" args="-d $(find syrena_ar_track)/rviz/look_cage_2.rviz"/>
+
+</launch>

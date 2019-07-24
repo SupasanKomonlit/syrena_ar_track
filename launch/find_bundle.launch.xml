@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- This part about parameter of ar_track -->
+    <arg name="marker_size" default="4.4"/>
+    <arg name="max_new_marker_error" default="0.08"/>
+    <arg name="max_track_error" default="0.2"/>
+    <arg name="bundle_files" default="$(find syrena_ar_track)/bundles/cage_06_21.xml"/>
+
+    <!-- This part about parameter of ar track but have to connect with other -->
+    <arg name="topic_camera_image" default="/rayfin/image_raw"/>
+    <arg name="topic_camera_info" default="/rayfin/camera_info"/>
+    <arg name="output_frame" default="rayfin_optical_frame"/>
+
+    <!-- This node is ar_track -->
+    <node name="syrena_ar_track" 
+        pkg="ar_track_alvar" 
+        type="findMarkerBundlesNoKinect"
+        args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg topic_camera_image) $(arg topic_camera_info) $(arg output_frame) $(arg bundle_files)"/>
+
+</launch>
